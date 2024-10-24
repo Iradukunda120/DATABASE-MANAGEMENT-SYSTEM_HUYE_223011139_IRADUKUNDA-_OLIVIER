@@ -1,0 +1,241 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 39
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database ruhande;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use ruhande;
+Database changed
+mysql> create table ngoma(number int(3),id int(16),first_name char(20),last-name char(15),gender char(6),province char(18),district char(30),sector char(29),cell(20),email_adress char(100),telephone int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-name char(15),gender char(6),province char(18),district char(30),sector char(29' at line 1
+mysql> create table ngoma(id int(16),first_name char(20),last_name char(15),gender char(6),province char(18),district char(30),sector char(29),cell char(20),email_adress char(100),telephone int(10));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+mysql> insert into ngoma values('1','uwase','aline','female','south','huye','ngoma','tumba','aline@gmail.com','0788888880');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into ngoma values('2','manzi','olivier','male','south','huye','ngoma','tumba','manzie@gmail.com','0723888880');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('3','ishimwe','john','male','north','gakenke','cyoko','vuba','uwayo12@gmail.com','0798568708');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('4','ishimwe','pamela','female','north','gakenke','cyabingo','rukore','pamekla2@gmail.com','0785687008');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('5','uwera','poline','female','south','nyamagabe','cyondo','tumba','poline122@gmail.com','0780087008');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('6','iradukunda','chris','male','north','musanze','muhoza','cyiza','iradukundao232@gmail.com','0781100321');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('7','mama','christine','female','east','rwamagana','karamaa','tuza','mama2@gmail.com','0781103331');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('8','papa','jule','male','west','rubavu','cyutamana','bweyeye','papa122@gmail.com','0780023331');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('9','kalisa','honore','male','kigali','gasabo','kinyiya','bukinanyana','kalisahonore002@gmail.com','0780022221');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values('10','gatesi','kellen','female','kigali','nyarugenge','muhima','mweru','gatesikellen2@gmail.com','0780020000');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from ngoma;
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | email_adress              | telephone |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | aline@gmail.com           | 788888880 |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | manzie@gmail.com          | 723888880 |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | uwayo12@gmail.com         | 798568708 |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | pamekla2@gmail.com        | 785687008 |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | poline122@gmail.com       | 780087008 |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | iradukundao232@gmail.com  | 781100321 |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | mama2@gmail.com           | 781103331 |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | papa122@gmail.com         | 780023331 |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | kalisahonore002@gmail.com | 780022221 |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | gatesikellen2@gmail.com   | 780020000 |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+
+10 rows in set (0.00 sec)
+mysql> alter table ngoma add nationality char(100);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | email_adress              | telephone | nationality |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | aline@gmail.com           | 788888880 | NULL        |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | manzie@gmail.com          | 723888880 | NULL        |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | uwayo12@gmail.com         | 798568708 | NULL        |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | pamekla2@gmail.com        | 785687008 | NULL        |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | poline122@gmail.com       | 780087008 | NULL        |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | iradukundao232@gmail.com  | 781100321 | NULL        |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | mama2@gmail.com           | 781103331 | NULL        |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | papa122@gmail.com         | 780023331 | NULL        |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | kalisahonore002@gmail.com | 780022221 | NULL        |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | gatesikellen2@gmail.com   | 780020000 | NULL        |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set nationality='single';
+Query OK, 10 rows affected (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> select *from ngoma;
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | email_adress              | telephone | nationality |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | aline@gmail.com           | 788888880 | single      |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | manzie@gmail.com          | 723888880 | single      |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | uwayo12@gmail.com         | 798568708 | single      |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | pamekla2@gmail.com        | 785687008 | single      |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | poline122@gmail.com       | 780087008 | single      |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | iradukundao232@gmail.com  | 781100321 | single      |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | mama2@gmail.com           | 781103331 | single      |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | papa122@gmail.com         | 780023331 | single      |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | kalisahonore002@gmail.com | 780022221 | single      |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | gatesikellen2@gmail.com   | 780020000 | single      |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select id,first_name,last_name,email_adress,telephone from ngoma;
++------+------------+-----------+---------------------------+-----------+
+| id   | first_name | last_name | email_adress              | telephone |
++------+------------+-----------+---------------------------+-----------+
+|    1 | uwase      | aline     | aline@gmail.com           | 788888880 |
+|    2 | manzi      | olivier   | manzie@gmail.com          | 723888880 |
+|    3 | ishimwe    | john      | uwayo12@gmail.com         | 798568708 |
+|    4 | ishimwe    | pamela    | pamekla2@gmail.com        | 785687008 |
+|    5 | uwera      | poline    | poline122@gmail.com       | 780087008 |
+|    6 | iradukunda | chris     | iradukundao232@gmail.com  | 781100321 |
+|    7 | mama       | christine | mama2@gmail.com           | 781103331 |
+|    8 | papa       | jule      | papa122@gmail.com         | 780023331 |
+|    9 | kalisa     | honore    | kalisahonore002@gmail.com | 780022221 |
+|   10 | gatesi     | kellen    | gatesikellen2@gmail.com   | 780020000 |
++------+------------+-----------+---------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> select *from ngoma where gender='male';and province='north';
++------+------------+-----------+--------+----------+----------+-----------+-------------+---------------------------+-----------+-------------+
+| id   | first_name | last_name | gender | province | district | sector    | cell        | email_adress              | telephone | nationality |
++------+------------+-----------+--------+----------+----------+-----------+-------------+---------------------------+-----------+-------------+
+|    2 | manzi      | olivier   | male   | south    | huye     | ngoma     | tumba       | manzie@gmail.com          | 723888880 | single      |
+|    3 | ishimwe    | john      | male   | north    | gakenke  | cyoko     | vuba        | uwayo12@gmail.com         | 798568708 | single      |
+|    6 | iradukunda | chris     | male   | north    | musanze  | muhoza    | cyiza       | iradukundao232@gmail.com  | 781100321 | single      |
+|    8 | papa       | jule      | male   | west     | rubavu   | cyutamana | bweyeye     | papa122@gmail.com         | 780023331 | single      |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo   | kinyiya   | bukinanyana | kalisahonore002@gmail.com | 780022221 | single      |
++------+------------+-----------+--------+----------+----------+-----------+-------------+---------------------------+-----------+-------------+
+5 rows in set (0.00 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and province='north'' at line 1
+mysql> select *from ngoma where gender='male'and province='north';
++------+------------+-----------+--------+----------+----------+--------+-------+--------------------------+-----------+-------------+
+| id   | first_name | last_name | gender | province | district | sector | cell  | email_adress             | telephone | nationality |
++------+------------+-----------+--------+----------+----------+--------+-------+--------------------------+-----------+-------------+
+|    3 | ishimwe    | john      | male   | north    | gakenke  | cyoko  | vuba  | uwayo12@gmail.com        | 798568708 | single      |
+|    6 | iradukunda | chris     | male   | north    | musanze  | muhoza | cyiza | iradukundao232@gmail.com | 781100321 | single      |
++------+------------+-----------+--------+----------+----------+--------+-------+--------------------------+-----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select *from ngoma where gender='male'orgender='female';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'orgender='female'' at line 1
+mysql> select *from ngoma where gender='male'or gender='female';
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | email_adress              | telephone | nationality |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | aline@gmail.com           | 788888880 | single      |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | manzie@gmail.com          | 723888880 | single      |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | uwayo12@gmail.com         | 798568708 | single      |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | pamekla2@gmail.com        | 785687008 | single      |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | poline122@gmail.com       | 780087008 | single      |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | iradukundao232@gmail.com  | 781100321 | single      |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | mama2@gmail.com           | 781103331 | single      |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | papa122@gmail.com         | 780023331 | single      |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | kalisahonore002@gmail.com | 780022221 | single      |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | gatesikellen2@gmail.com   | 780020000 | single      |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select *from ngoma where gender='female'or sector='ngoma';
++------+------------+-----------+--------+----------+------------+----------+--------+-------------------------+-----------+-------------+
+| id   | first_name | last_name | gender | province | district   | sector   | cell   | email_adress            | telephone | nationality |
++------+------------+-----------+--------+----------+------------+----------+--------+-------------------------+-----------+-------------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma    | tumba  | aline@gmail.com         | 788888880 | single      |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma    | tumba  | manzie@gmail.com        | 723888880 | single      |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo | rukore | pamekla2@gmail.com      | 785687008 | single      |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo   | tumba  | poline122@gmail.com     | 780087008 | single      |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa  | tuza   | mama2@gmail.com         | 781103331 | single      |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima   | mweru  | gatesikellen2@gmail.com | 780020000 | single      |
++------+------------+-----------+--------+----------+------------+----------+--------+-------------------------+-----------+-------------+
+6 rows in set (0.00 sec)
+mysql> alter table ngoma change column nationality status char(10);
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+--------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | email_adress              | telephone | status |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+--------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | aline@gmail.com           | 788888880 | single |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | manzie@gmail.com          | 723888880 | single |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | uwayo12@gmail.com         | 798568708 | single |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | pamekla2@gmail.com        | 785687008 | single |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | poline122@gmail.com       | 780087008 | single |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | iradukundao232@gmail.com  | 781100321 | single |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | mama2@gmail.com           | 781103331 | single |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | papa122@gmail.com         | 780023331 | single |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | kalisahonore002@gmail.com | 780022221 | single |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | gatesikellen2@gmail.com   | 780020000 | single |
++------+------------+-----------+--------+----------+------------+-----------+-------------+---------------------------+-----------+--------+
+10 rows in set (0.00 sec)
+mysql> alter table  ngoma drop email_adress;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+------------+-----------+--------+----------+------------+-----------+-------------+-----------+--------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | telephone | status |
++------+------------+-----------+--------+----------+------------+-----------+-------------+-----------+--------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | 788888880 | single |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | 723888880 | single |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | 798568708 | single |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | 785687008 | single |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | 780087008 | single |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | 781100321 | single |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | 781103331 | single |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | 780023331 | single |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | 780022221 | single |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | 780020000 | single |
++------+------------+-----------+--------+----------+------------+-----------+-------------+-----------+--------+
+10 rows in set (0.00 sec)
+mysql> alter table  ngoma drop email_adress;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+------------+-----------+--------+----------+------------+-----------+-------------+-----------+--------+
+| id   | first_name | last_name | gender | province | district   | sector    | cell        | telephone | status |
++------+------------+-----------+--------+----------+------------+-----------+-------------+-----------+--------+
+|    1 | uwase      | aline     | female | south    | huye       | ngoma     | tumba       | 788888880 | single |
+|    2 | manzi      | olivier   | male   | south    | huye       | ngoma     | tumba       | 723888880 | single |
+|    3 | ishimwe    | john      | male   | north    | gakenke    | cyoko     | vuba        | 798568708 | single |
+|    4 | ishimwe    | pamela    | female | north    | gakenke    | cyabingo  | rukore      | 785687008 | single |
+|    5 | uwera      | poline    | female | south    | nyamagabe  | cyondo    | tumba       | 780087008 | single |
+|    6 | iradukunda | chris     | male   | north    | musanze    | muhoza    | cyiza       | 781100321 | single |
+|    7 | mama       | christine | female | east     | rwamagana  | karamaa   | tuza        | 781103331 | single |
+|    8 | papa       | jule      | male   | west     | rubavu     | cyutamana | bweyeye     | 780023331 | single |
+|    9 | kalisa     | honore    | male   | kigali   | gasabo     | kinyiya   | bukinanyana | 780022221 | single |
+|   10 | gatesi     | kellen    | female | kigali   | nyarugenge | muhima    | mweru       | 780020000 | single |
++------+------------+-----------+--------+----------+------------+-----------+-------------+-----------+--------+
+10 rows in set (0.00 sec)
